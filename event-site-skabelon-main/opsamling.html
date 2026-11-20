@@ -1,50 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Din smagsrute | Food of cultures</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opsamling | Eventnavn</title>
-  <link rel="stylesheet" href="./starter.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <header class="site-header">
-    <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
-      <nav class="site-nav">
-        <button>Menu</button>
-        <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html" aria-current="page">Formular</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="opsamling-page">
-      <div class="opsamling-intro">
-        <h1>Opsamling</h1>
-        <p>Vis brugerens valg som et pass, en invitation eller noget andet, der passer til dit event.</p>
-        <div class="actions">
-          <a class="button" href="./form.html">Tilbage til formular</a>
-        </div>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="site-logo" href="./"><img class="logo" src="image.png" alt="Food of cultures" /></a>
+        <nav class="site-nav">
+          <button popovertarget="menu">Menu</button>
+          <ul class="menu" id="menu" popover>
+            <li><a href="./">Forside</a></li>
+            <li><a href="./svg.html">Find boder</a></li>
+            <li><a href="./form.html" aria-current="page">Formular</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <article class="opsamling-placeholder"></article>
-    </section>
-  </main>
+    <main>
+      <section class="opsamling-page">
+        <header class="opsamling-intro">
+          <h1>Din smagsrute</h1>
+          <p>Her er din personlige rute gennem Food of cultures. Følg den rundt på pladsen, og find boderne på kortet.</p>
+          <a class="button button-primary" href="./form.html">Lav en ny rute</a>
+        </header>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
-    </div>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+        <article class="rute-kort" id="rute-kort">
+          <div class="rute-top">
+            <p class="rute-eyebrow">Food of cultures · Smagsrute</p>
+            <h2 id="rute-navn">Din smagsrute</h2>
+            <p id="rute-start"></p>
+          </div>
+          <div class="rute-kolonner" id="rute-kolonner"></div>
+          <a class="button rute-knap" href="./svg.html">Se kortet</a>
+        </article>
+      </section>
+    </main>
 
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-kontakt">
+          <a href="./"><img class="footer-logo" src="image.png" alt="Food of cultures – til forsiden" /></a>
+          <p><strong>Kontakt</strong></p>
+          <p>Telefon: <a href="tel:+4512345678">+45 12 34 56 78</a></p>
+          <p>E-mail: <a href="mailto:hej@foodofcultures.dk">hej@foodofcultures.dk</a></p>
+        </div>
+        <p class="footer-dato">15. august 2081 · Langlangborteby, København</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="./opsamling.js"></script>
+  </body>
 </html>

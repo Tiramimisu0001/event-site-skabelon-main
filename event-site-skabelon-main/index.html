@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eventnavn</title>
+    <title>Food of cultures</title>
     <link rel="stylesheet" href="./starter.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -11,14 +11,12 @@
   <body>
     <header class="site-header">
       <div class="header-content">
-        <a class="site-logo" href="./">Food of cultures</a>
+        <a class="site-logo" href="./"><img class="logo" src="image.png" alt="Food of cultures" /></a>
         <nav class="site-nav">
           <button popovertarget="menu">Menu</button>
-
-          <!-- <button>Menu</button> -->
           <ul class="menu" id="menu" popover>
             <li><a href="./" aria-current="page">Forside</a></li>
-            <li><a href="./svg.html">Interaktiv SVG</a></li>
+            <li><a href="./svg.html">Find boder</a></li>
             <li><a href="./form.html">Formular</a></li>
           </ul>
         </nav>
@@ -26,20 +24,203 @@
     </header>
 
     <main>
-      <section class="articles">
-        <button class="button" popovertarget="popup">Open popup</button>
-
-        <div id="popup" class="article-popup" popover>
-          <h2>I'm a popup</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <!-- 1. Hero (fuld bredde) -->
+      <section class="hero">
+        <div class="hero-media">
+          <img src="FOOD 4.png" alt="" />
         </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <!-- Titlen står allerede i billedet, så h1 skjules visuelt (men læses af skærmlæsere) -->
+            <h1 class="visually-hidden">Food of cultures</h1>
+            <p class="eyebrow">15. august 2081 · København</p>
+            <p class="hero-intro">Rejs jorden rundt på én dag. Smag, mød og lær nye kulturer at kende.</p>
+            <div class="hero-actions">
+              <a class="button button-light" href="./form.html">Tilmeld dig</a>
+              <a class="button button-ghost" href="#artikler">Læs mere</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Popup-artikler -->
+      <section class="articles" id="artikler">
+        <h2>Smag dig gennem verden</h2>
+        <div class="article-grid">
+          <article class="article-card">
+            <img class="kontinent" src="afrika.png" alt="afrika" />
+            <h3>Fra Marrakech til Cape Town</h3>
+            <p>Tagine, jollof, injera og bobotie.</p>
+            <button class="button" popovertarget="artikel-1">Læs mere</button>
+          </article>
+
+          <article class="article-card">
+            <img class="kontinent" src="asien.png" alt="Asien" />
+            <h3>Fra Palestina til Tokyo</h3>
+            <p>Falafel, biryani, pad thai og ramen.</p>
+            <button class="button" popovertarget="artikel-2">Læs mere</button>
+          </article>
+
+          <article class="article-card">
+            <img class="kontinent" src="Europa.png" alt="Europa" />
+            <h3>Fra Paris til Istanbul</h3>
+            <p>Croissanter, pizza, paella og sarma.</p>
+            <button class="button" popovertarget="artikel-3">Læs mere</button>
+          </article>
+
+          <article class="article-card">
+            <img class="kontinent" src="sydamerika.png" alt="Sydamerika" />
+            <h3>Fra Bogotá til Patagonien</h3>
+            <p>Arepas, ceviche, feijoada og empanadas.</p>
+            <button class="button" popovertarget="artikel-4">Læs mere</button>
+          </article>
+        </div>
+
+        <div id="artikel-1" class="article-popup" popover>
+          <h2>Afrika på en tallerken</h2>
+
+          <p>Fra Middelhavets krydderier i nord til grillmaden i syd. Afrika har over 50 lande, og her kan du smage et lille udvalg.</p>
+
+          <ul>
+            <li><strong>Tagine</strong> · Marokko</li>
+            <li><strong>Couscous</strong> · Algeriet</li>
+            <li><strong>Shakshuka</strong> · Tunesien</li>
+            <li><strong>Ful medames</strong> · Egypten</li>
+            <li><strong>Thieboudienne</strong> · Senegal</li>
+            <li><strong>Suya</strong> · Nigeria</li>
+            <li><strong>Jollof</strong> · Nigeria</li>
+            <li><strong>Fufu med suppe</strong> · Ghana</li>
+            <li><strong>Ndolé</strong> · Cameroun</li>
+            <li><strong>Moambe-kylling</strong> · DR Congo</li>
+            <li><strong>Injera</strong> · Etiopien</li>
+            <li><strong>Ugali</strong> · Kenya</li>
+            <li><strong>Pilau</strong> · Tanzania</li>
+            <li><strong>Piri piri-kylling</strong> · Mozambique</li>
+            <li><strong>Romazava</strong> · Madagaskar</li>
+            <li><strong>Bobotie</strong> · Sydafrika</li>
+          </ul>
+
+          <p>Find de afrikanske boder ved fufu og suppe på kortet.</p>
+          <button class="button" popovertarget="artikel-1" popovertargetaction="hide">Luk</button>
+        </div>
+
+        <div id="artikel-2" class="article-popup" popover>
+          <h2>Asien på en tallerken</h2>
+
+          <p>Fra Mellemøstens krydderier til Østasiens dampende gryder. Asien er verdens største kontinent, og her kan du smage et lille udvalg.</p>
+
+          <ul>
+            <li><strong>Musakhan</strong> · Palæstina</li>
+            <li><strong>Falafel</strong> · Libanon</li>
+            <li><strong>Mansaf</strong> · Jordan</li>
+            <li><strong>Kabsa</strong> · Saudi-Arabien</li>
+            <li><strong>Ghormeh sabzi</strong> · Iran</li>
+            <li><strong>Plov</strong> · Usbekistan</li>
+            <li><strong>Biryani</strong> · Indien</li>
+            <li><strong>Momo</strong> · Nepal</li>
+            <li><strong>Kottu roti</strong> · Sri Lanka</li>
+            <li><strong>Pad thai</strong> · Thailand</li>
+            <li><strong>Phở</strong> · Vietnam</li>
+            <li><strong>Adobo</strong> · Filippinerne</li>
+            <li><strong>Nasi goreng</strong> · Indonesien</li>
+            <li><strong>Dumplings</strong> · Kina</li>
+            <li><strong>Bibimbap</strong> · Sydkorea</li>
+            <li><strong>Ramen</strong> · Japan</li>
+          </ul>
+
+          <p>Find de asiatiske boder ved nudelskålen på kortet.</p>
+
+          <button class="button" popovertarget="artikel-2" popovertargetaction="hide">Luk</button>
+        </div>
+
+        <div id="artikel-3" class="article-popup" popover>
+          <h2>Europa på en tallerken</h2>
+
+          <p>Fra nordens rugbrød til Middelhavets olivenolie. Europa har mange små lande med hver deres køkken, og her kan du smage et lille udvalg.</p>
+
+          <ul>
+            <li><strong>Smørrebrød</strong> · Danmark</li>
+            <li><strong>Köttbullar</strong> · Sverige</li>
+            <li><strong>Fish and chips</strong> · England</li>
+            <li><strong>Irish stew</strong> · Irland</li>
+            <li><strong>Croissant</strong> · Frankrig</li>
+            <li><strong>Pastel de nata</strong> · Portugal</li>
+            <li><strong>Paella</strong> · Spanien</li>
+            <li><strong>Pizza</strong> · Italien</li>
+            <li><strong>Bratwurst</strong> · Tyskland</li>
+            <li><strong>Wiener schnitzel</strong> · Østrig</li>
+            <li><strong>Pierogi</strong> · Polen</li>
+            <li><strong>Borsjtj</strong> · Ukraine</li>
+            <li><strong>Gullasch</strong> · Ungarn</li>
+            <li><strong>Sarma</strong> · Albanien</li>
+            <li><strong>Moussaka</strong> · Grækenland</li>
+            <li><strong>Baklava</strong> · Tyrkiet</li>
+          </ul>
+
+          <p>Find de europæiske boder ved pizzaen på kortet.</p>
+          <button class="button" popovertarget="artikel-3" popovertargetaction="hide">Luk</button>
+        </div>
+
+        <div id="artikel-4" class="article-popup" popover>
+          <h2>Sydamerika på en tallerken</h2>
+
+          <p>Fra Caribiens majs og frugt i nord til grillmaden i Patagonien. Sydamerika er fuld af farver og stærke smage, og her kan du smage et lille udvalg.</p>
+
+          <ul>
+            <li><strong>Arepas</strong> · Venezuela</li>
+            <li><strong>Bandeja paisa</strong> · Colombia</li>
+            <li><strong>Ajiaco</strong> · Colombia</li>
+            <li><strong>Pepperpot</strong> · Guyana</li>
+            <li><strong>Encebollado</strong> · Ecuador</li>
+            <li><strong>Ceviche</strong> · Peru</li>
+            <li><strong>Lomo saltado</strong> · Peru</li>
+            <li><strong>Salteñas</strong> · Bolivia</li>
+            <li><strong>Feijoada</strong> · Brasilien</li>
+            <li><strong>Pão de queijo</strong> · Brasilien</li>
+            <li><strong>Sopa paraguaya</strong> · Paraguay</li>
+            <li><strong>Chivito</strong> · Uruguay</li>
+            <li><strong>Empanadas</strong> · Argentina</li>
+            <li><strong>Asado</strong> · Argentina</li>
+            <li><strong>Pastel de choclo</strong> · Chile</li>
+            <li><strong>Curanto</strong> · Chile</li>
+          </ul>
+
+          <p>Find de sydamerikanske boder ved empanadaen på kortet.</p>
+          <button class="button" popovertarget="artikel-4" popovertargetaction="hide">Luk</button>
+        </div>
+      </section>
+
+      <!-- 3. Teaser til SVG (fuld bredde) -->
+      <section class="svg-teaser">
+        <div class="svg-teaser-content">
+          <a href="./svg.html" class="svg-teaser-img">
+            <img src="kort.svg" alt="Kort over Food of cultures med boder fra Afrika, Asien, Europa og Sydamerika" />
+          </a>
+          <div class="svg-teaser-text">
+            <h2>Find vej til boderne</h2>
+            <p>58 boder fra fire kontinenter. Se kortet over pladsen, og find ud af, hvor du kan smage dig gennem verden.</p>
+            <a class="button button-light" href="./svg.html">Se kort</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Teaser til formular -->
+      <section class="form-teaser">
+        <h2>Lav din smagsrute</h2>
+        <p>Vær med, og tag på en smagsrejse jorden rundt.</p>
+        <a class="button button-primary" href="./form.html">Lav din rute</a>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-content">
-        <p>Food of cultures</p>
-        <p>Footer</p>
+        <div class="footer-kontakt">
+          <a href="./"><img class="footer-logo" src="image.png" alt="Food of cultures – til forsiden" /></a>
+          <p><strong>Kontakt</strong></p>
+          <p>Telefon: <a href="tel:+4512345678">+45 12 34 56 78</a></p>
+          <p>E-mail: <a href="mailto:hej@foodofcultures.dk">hej@foodofcultures.dk</a></p>
+        </div>
+        <p class="footer-dato">15. august 2081 · Langlangborteby, København</p>
       </div>
     </footer>
     <script src="./script.js"></script>

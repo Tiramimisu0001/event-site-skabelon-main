@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="UTF-8" />
+<title>Styletile – Food of cultures</title>
+<style>
+  :root {
+    --burgundy: #721d2b;
+    --cream: #f5e6c8;
+    --border: #d8d8d8;
+    --line: #9cc9e6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 32px 48px 48px;
+    font-family: system-ui, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.5;
+  }
+  .top {
+    display: flex; align-items: center; gap: 64px;
+    padding-bottom: 20px; border-bottom: 1px solid #ccc; margin-bottom: 28px;
+  }
+  .logo-box {
+    background: var(--burgundy); color: var(--cream);
+    padding: 8px 14px; font-weight: 700;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; }
+  h2.label { font-size: 12px; font-weight: 600; color: #555; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .05em; }
+  .block { margin-bottom: 28px; }
+  .swatches { display: flex; gap: 14px; }
+  .swatch { width: 84px; }
+  .swatch div { height: 64px; border: 1px solid #ccc; }
+  .swatch span { display: block; font-size: 11px; color: #555; margin-top: 4px; }
+  .todo {
+    border: 1.5px dashed #bbb; color: #999; font-size: 12px;
+    display: grid; place-items: center; text-align: center; padding: 8px;
+  }
+  .tiles { display: flex; gap: 14px; }
+  .tiles .todo { width: 84px; height: 84px; }
+  .wide-todo { height: 48px; }
+  .type h1 { font-size: 40px; line-height: 1.1; color: var(--burgundy); }
+  .type h3 { font-size: 22px; color: var(--burgundy); margin-top: 12px; }
+  .type p { color: var(--burgundy); max-width: 46ch; }
+  .meta { font-size: 11px; color: #777; margin-bottom: 6px; }
+  .buttons { display: grid; grid-template-columns: repeat(3, auto); gap: 10px; justify-content: start; align-items: center; }
+  .btn { padding: 8px 13px; font: inherit; border: 1px solid; }
+  .btn-primary { background: var(--burgundy); color: var(--cream); border-color: var(--burgundy); }
+  .btn-light { background: var(--cream); color: var(--burgundy); border-color: var(--cream); }
+  .btn-outline { background: none; color: var(--burgundy); border-color: var(--burgundy); }
+  .on-dark { background: var(--burgundy); padding: 10px; display: inline-flex; }
+  .svg-head { grid-column: 1 / -1; border-top: 1px solid #ccc; padding-top: 24px; }
+  .svg-tag { display: inline-block; background: #aaa; color: #fff; padding: 6px 18px; font-size: 13px; }
+  .note { font-size: 11px; color: #999; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="logo-box">Logotype</div>
+    <div><strong>Food of cultures</strong> — Event-site</div>
+  </div>
+
+  <div class="grid">
+    <!-- Venstre kolonne: event-site -->
+    <div>
+      <div class="block">
+        <h2 class="label">Farver</h2>
+        <div class="swatches">
+          <div class="swatch"><div style="background:#721d2b"></div><span>#721D2B<br>Bordeaux – flader, header, footer</span></div>
+          <div class="swatch"><div style="background:#f5e6c8"></div><span>#F5E6C8<br>Creme – baggrund, tekst på mørk</span></div>
+          <div class="swatch"><div style="background:#d8d8d8"></div><span>#D8D8D8<br>Kantfarve</span></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2 class="label">Teksturer / fotografi</h2>
+        <div class="tiles"><div class="todo">Udfyld</div><div class="todo">Udfyld</div><div class="todo">Udfyld</div></div>
+      </div>
+
+      <div class="block">
+        <h2 class="label">Ikoner</h2>
+        <div class="todo wide-todo">Udfyld</div>
+      </div>
+
+      <div class="block">
+        <h2 class="label">Værdiord</h2>
+        <div class="todo wide-todo">Værdiord et, Værdiord to, Værdiord tre</div>
+      </div>
+    </div>
+
+    <!-- Højre kolonne: typografi og knapper -->
+    <div>
+      <div class="block type">
+        <p class="meta">Font: system-ui (sans-serif) · Weight 700 · clamp(2.5rem, 7vw, 5rem)</p>
+        <h1>Food of cultures</h1>
+        <p class="meta" style="margin-top:12px">Font: system-ui · Weight 700</p>
+        <h3>Eksempel på underoverskrift</h3>
+        <p class="meta" style="margin-top:12px">Font: system-ui · Weight 400 · 16px · line-height 1.5</p>
+        <p>Eksempel på brødtekst. Kort introtekst om eventet.</p>
+      </div>
+
+      <div class="block">
+        <h2 class="label">Knapper</h2>
+        <div class="buttons">
+          <button class="btn btn-primary">Primær knap</button>
+          <span class="on-dark"><button class="btn btn-light">Lys knap</button></span>
+          <button class="btn btn-outline">Læs mere</button>
+        </div>
+        <p class="note">Primær: på creme baggrund · Lys: på bordeaux baggrund · Outline: artikler og popups</p>
+      </div>
+
+      <div class="block">
+        <h2 class="label">Logotype</h2>
+        <div class="todo wide-todo">Indsæt logo (image.png)</div>
+      </div>
+
+      <div class="block">
+        <h2 class="label">Favicon</h2>
+        <div class="tiles"><div class="todo">Udfyld</div></div>
+      </div>
+    </div>
+
+    <!-- SVG -->
+    <div class="svg-head"><span class="svg-tag">SVG</span></div>
+
+    <div>
+      <div class="block">
+        <h2 class="label">SVG-farver</h2>
+        <div class="tiles"><div class="todo">Udfyld</div><div class="todo">Udfyld</div><div class="todo">Udfyld</div><div class="todo">Udfyld</div></div>
+      </div>
+      <div class="block">
+        <h2 class="label">Teksturer / grafisk stil</h2>
+        <div class="tiles"><div class="todo">Udfyld</div><div class="todo">Udfyld</div><div class="todo">Udfyld</div></div>
+      </div>
+      <div class="block">
+        <h2 class="label">Inspiration / tegnestil</h2>
+        <div class="todo wide-todo">Udfyld</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block">
+        <h2 class="label">SVG-indhold</h2>
+        <p style="font-size:14px">3 highlight-områder, forbundet med 3 accordion-elementer på SVG-siden.</p>
+        <div class="tiles" style="margin-top:8px"><div class="todo">Område 1</div><div class="todo">Område 2</div><div class="todo">Område 3</div></div>
+      </div>
+      <div class="block">
+        <h2 class="label">Infografik</h2>
+        <div class="todo wide-todo">Udfyld</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

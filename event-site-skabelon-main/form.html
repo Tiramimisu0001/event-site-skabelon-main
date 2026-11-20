@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formular | Eventnavn</title>
+    <title>Formular | Food of cultures</title>
     <link rel="stylesheet" href="./starter.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -11,12 +11,12 @@
   <body>
     <header class="site-header">
       <div class="header-content">
-        <a class="site-logo" href="./">Food of cultures</a>
+        <a class="site-logo" href="./"><img class="logo" src="image.png" alt="Food of cultures" /></a>
         <nav class="site-nav">
-          <button>Menu</button>
+          <button popovertarget="menu">Menu</button>
           <ul class="menu" id="menu" popover>
             <li><a href="./">Forside</a></li>
-            <li><a href="./svg.html">Interaktiv SVG</a></li>
+            <li><a href="./svg.html">Find boder</a></li>
             <li><a href="./form.html" aria-current="page">Formular</a></li>
           </ul>
         </nav>
@@ -26,20 +26,144 @@
     <main>
       <section class="form-page">
         <header class="form-intro">
-          <h1>Formular</h1>
-          <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
+          <h1>Lav din smagsrute</h1>
+          <p>Vælg din billet, de retter du vil smage, og hvor du vil starte, så laver vi din personlige rute gennem eventet.</p>
         </header>
 
-        <form class="form-placeholder" action="./opsamling.html"></form>
+        <form class="form-placeholder" action="./opsamling.html" method="get">
+          <label for="navn">Hvad hedder du?</label>
+          <input type="text" id="navn" name="navn" required />
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="tid">Vælg din billet</label>
+          <select id="tid" name="tid" required>
+            <option value="">Vælg billet</option>
+            <option value="1">Smagsprøve · under 1 time · 4 retter</option>
+            <option value="1-3">Halvdag · 1–3 timer · 8 retter</option>
+            <option value="3-6">Eftermiddag · 3–6 timer · 16 retter</option>
+            <option value="hele">Heldag · hele dagen · alle retter</option>
+          </select>
+
+          <fieldset>
+            <legend>Hvilke retter vil du smage?</legend>
+            <p class="ret-taeller" id="ret-taeller" aria-live="polite">Vælg din billet først, så kan du se, hvor mange retter du kan nå.</p>
+
+            <details class="ret-gruppe">
+              <summary>Afrika</summary>
+              <div class="ret-liste">
+                <label for="tagine"><input type="checkbox" id="tagine" name="ret" value="tagine" /> Tagine · Marokko</label>
+                <label for="couscous"><input type="checkbox" id="couscous" name="ret" value="couscous" /> Couscous · Algeriet</label>
+                <label for="shakshuka"><input type="checkbox" id="shakshuka" name="ret" value="shakshuka" /> Shakshuka · Tunesien</label>
+                <label for="ful-medames"><input type="checkbox" id="ful-medames" name="ret" value="ful-medames" /> Ful medames · Egypten</label>
+                <label for="thieboudienne"><input type="checkbox" id="thieboudienne" name="ret" value="thieboudienne" /> Thieboudienne · Senegal</label>
+                <label for="suya"><input type="checkbox" id="suya" name="ret" value="suya" /> Suya · Nigeria</label>
+                <label for="jollof"><input type="checkbox" id="jollof" name="ret" value="jollof" /> Jollof · Nigeria</label>
+                <label for="fufu-med-suppe"><input type="checkbox" id="fufu-med-suppe" name="ret" value="fufu-med-suppe" /> Fufu med suppe · Ghana</label>
+                <label for="ndole"><input type="checkbox" id="ndole" name="ret" value="ndole" /> Ndolé · Cameroun</label>
+                <label for="moambe-kylling"><input type="checkbox" id="moambe-kylling" name="ret" value="moambe-kylling" /> Moambe-kylling · DR Congo</label>
+                <label for="injera"><input type="checkbox" id="injera" name="ret" value="injera" /> Injera · Etiopien</label>
+                <label for="ugali"><input type="checkbox" id="ugali" name="ret" value="ugali" /> Ugali · Kenya</label>
+                <label for="pilau"><input type="checkbox" id="pilau" name="ret" value="pilau" /> Pilau · Tanzania</label>
+                <label for="piri-piri-kylling"><input type="checkbox" id="piri-piri-kylling" name="ret" value="piri-piri-kylling" /> Piri piri-kylling · Mozambique</label>
+                <label for="romazava"><input type="checkbox" id="romazava" name="ret" value="romazava" /> Romazava · Madagaskar</label>
+                <label for="bobotie"><input type="checkbox" id="bobotie" name="ret" value="bobotie" /> Bobotie · Sydafrika</label>
+              </div>
+            </details>
+
+            <details class="ret-gruppe">
+              <summary>Asien</summary>
+              <div class="ret-liste">
+                <label for="musakhan"><input type="checkbox" id="musakhan" name="ret" value="musakhan" /> Musakhan · Palæstina</label>
+                <label for="falafel"><input type="checkbox" id="falafel" name="ret" value="falafel" /> Falafel · Libanon</label>
+                <label for="mansaf"><input type="checkbox" id="mansaf" name="ret" value="mansaf" /> Mansaf · Jordan</label>
+                <label for="kabsa"><input type="checkbox" id="kabsa" name="ret" value="kabsa" /> Kabsa · Saudi-Arabien</label>
+                <label for="ghormeh-sabzi"><input type="checkbox" id="ghormeh-sabzi" name="ret" value="ghormeh-sabzi" /> Ghormeh sabzi · Iran</label>
+                <label for="plov"><input type="checkbox" id="plov" name="ret" value="plov" /> Plov · Usbekistan</label>
+                <label for="biryani"><input type="checkbox" id="biryani" name="ret" value="biryani" /> Biryani · Indien</label>
+                <label for="momo"><input type="checkbox" id="momo" name="ret" value="momo" /> Momo · Nepal</label>
+                <label for="kottu-roti"><input type="checkbox" id="kottu-roti" name="ret" value="kottu-roti" /> Kottu roti · Sri Lanka</label>
+                <label for="pad-thai"><input type="checkbox" id="pad-thai" name="ret" value="pad-thai" /> Pad thai · Thailand</label>
+                <label for="pho"><input type="checkbox" id="pho" name="ret" value="pho" /> Phở · Vietnam</label>
+                <label for="adobo"><input type="checkbox" id="adobo" name="ret" value="adobo" /> Adobo · Filippinerne</label>
+                <label for="nasi-goreng"><input type="checkbox" id="nasi-goreng" name="ret" value="nasi-goreng" /> Nasi goreng · Indonesien</label>
+                <label for="dumplings"><input type="checkbox" id="dumplings" name="ret" value="dumplings" /> Dumplings · Kina</label>
+                <label for="bibimbap"><input type="checkbox" id="bibimbap" name="ret" value="bibimbap" /> Bibimbap · Sydkorea</label>
+                <label for="ramen"><input type="checkbox" id="ramen" name="ret" value="ramen" /> Ramen · Japan</label>
+              </div>
+            </details>
+
+            <details class="ret-gruppe">
+              <summary>Europa</summary>
+              <div class="ret-liste">
+                <label for="smoerrebroed"><input type="checkbox" id="smoerrebroed" name="ret" value="smoerrebroed" /> Smørrebrød · Danmark</label>
+                <label for="kottbullar"><input type="checkbox" id="kottbullar" name="ret" value="kottbullar" /> Köttbullar · Sverige</label>
+                <label for="fish-and-chips"><input type="checkbox" id="fish-and-chips" name="ret" value="fish-and-chips" /> Fish and chips · England</label>
+                <label for="irish-stew"><input type="checkbox" id="irish-stew" name="ret" value="irish-stew" /> Irish stew · Irland</label>
+                <label for="croissant"><input type="checkbox" id="croissant" name="ret" value="croissant" /> Croissant · Frankrig</label>
+                <label for="pastel-de-nata"><input type="checkbox" id="pastel-de-nata" name="ret" value="pastel-de-nata" /> Pastel de nata · Portugal</label>
+                <label for="paella"><input type="checkbox" id="paella" name="ret" value="paella" /> Paella · Spanien</label>
+                <label for="pizza"><input type="checkbox" id="pizza" name="ret" value="pizza" /> Pizza · Italien</label>
+                <label for="bratwurst"><input type="checkbox" id="bratwurst" name="ret" value="bratwurst" /> Bratwurst · Tyskland</label>
+                <label for="wiener-schnitzel"><input type="checkbox" id="wiener-schnitzel" name="ret" value="wiener-schnitzel" /> Wiener schnitzel · Østrig</label>
+                <label for="pierogi"><input type="checkbox" id="pierogi" name="ret" value="pierogi" /> Pierogi · Polen</label>
+                <label for="borsjtj"><input type="checkbox" id="borsjtj" name="ret" value="borsjtj" /> Borsjtj · Ukraine</label>
+                <label for="gullasch"><input type="checkbox" id="gullasch" name="ret" value="gullasch" /> Gullasch · Ungarn</label>
+                <label for="sarma"><input type="checkbox" id="sarma" name="ret" value="sarma" /> Sarma · Albanien</label>
+                <label for="moussaka"><input type="checkbox" id="moussaka" name="ret" value="moussaka" /> Moussaka · Grækenland</label>
+                <label for="baklava"><input type="checkbox" id="baklava" name="ret" value="baklava" /> Baklava · Tyrkiet</label>
+              </div>
+            </details>
+
+            <details class="ret-gruppe">
+              <summary>Sydamerika</summary>
+              <div class="ret-liste">
+                <label for="arepas"><input type="checkbox" id="arepas" name="ret" value="arepas" /> Arepas · Venezuela</label>
+                <label for="bandeja-paisa"><input type="checkbox" id="bandeja-paisa" name="ret" value="bandeja-paisa" /> Bandeja paisa · Colombia</label>
+                <label for="ajiaco"><input type="checkbox" id="ajiaco" name="ret" value="ajiaco" /> Ajiaco · Colombia</label>
+                <label for="pepperpot"><input type="checkbox" id="pepperpot" name="ret" value="pepperpot" /> Pepperpot · Guyana</label>
+                <label for="encebollado"><input type="checkbox" id="encebollado" name="ret" value="encebollado" /> Encebollado · Ecuador</label>
+                <label for="ceviche"><input type="checkbox" id="ceviche" name="ret" value="ceviche" /> Ceviche · Peru</label>
+                <label for="lomo-saltado"><input type="checkbox" id="lomo-saltado" name="ret" value="lomo-saltado" /> Lomo saltado · Peru</label>
+                <label for="saltenas"><input type="checkbox" id="saltenas" name="ret" value="saltenas" /> Salteñas · Bolivia</label>
+                <label for="feijoada"><input type="checkbox" id="feijoada" name="ret" value="feijoada" /> Feijoada · Brasilien</label>
+                <label for="pao-de-queijo"><input type="checkbox" id="pao-de-queijo" name="ret" value="pao-de-queijo" /> Pão de queijo · Brasilien</label>
+                <label for="sopa-paraguaya"><input type="checkbox" id="sopa-paraguaya" name="ret" value="sopa-paraguaya" /> Sopa paraguaya · Paraguay</label>
+                <label for="chivito"><input type="checkbox" id="chivito" name="ret" value="chivito" /> Chivito · Uruguay</label>
+                <label for="empanadas"><input type="checkbox" id="empanadas" name="ret" value="empanadas" /> Empanadas · Argentina</label>
+                <label for="asado"><input type="checkbox" id="asado" name="ret" value="asado" /> Asado · Argentina</label>
+                <label for="pastel-de-choclo"><input type="checkbox" id="pastel-de-choclo" name="ret" value="pastel-de-choclo" /> Pastel de choclo · Chile</label>
+                <label for="curanto"><input type="checkbox" id="curanto" name="ret" value="curanto" /> Curanto · Chile</label>
+              </div>
+            </details>
+          </fieldset>
+
+          <fieldset>
+            <legend>Hvor vil du starte?</legend>
+            <label for="start-afrika"><input type="radio" id="start-afrika" name="start" value="afrika" /> Afrika</label>
+            <label for="start-asien"><input type="radio" id="start-asien" name="start" value="asien" /> Asien</label>
+            <label for="start-europa"><input type="radio" id="start-europa" name="start" value="europa" /> Europa</label>
+            <label for="start-sydamerika"><input type="radio" id="start-sydamerika" name="start" value="sydamerika" /> Sydamerika</label>
+          </fieldset>
+
+          <button class="button button-primary" id="rute-knap">Lav min rute</button>
+        </form>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-content">
-        <p>Food of cultures</p>
-        <p>Footer</p>
+        <div class="footer-kontakt">
+          <a href="./"><img class="footer-logo" src="image.png" alt="Food of cultures – til forsiden" /></a>
+          <p><strong>Kontakt</strong></p>
+          <p>Telefon: <a href="tel:+4512345678">+45 12 34 56 78</a></p>
+          <p>E-mail: <a href="mailto:hej@foodofcultures.dk">hej@foodofcultures.dk</a></p>
+        </div>
+        <p class="footer-dato">15. august 2081 · Langlangborteby, København</p>
       </div>
     </footer>
     <script src="./script.js"></script>
+    <script src="./form.js"></script>
   </body>
 </html>
